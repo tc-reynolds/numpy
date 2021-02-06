@@ -13,10 +13,9 @@ def mean_datasets(datasets):
       data = np.array(read_data(dataset))
       for i, row in enumerate(data):
         mean_dataset[i] = data[i] + mean_dataset[i]
-  mean_dataset = mean_dataset / len(datasets)    
+  mean_dataset = np.round(mean_dataset / len(datasets), 1)
   return mean_dataset
       
 
 if __name__ == '__main__':
   print(mean_datasets(['data1.csv', 'data2.csv', 'data3.csv']))
-  print(mean_datasets(['data4.csv', 'data5.csv', 'data6.csv']))
